@@ -10,7 +10,7 @@
 
   
 
-  columncount.forEach(col = () => {
+  Array.from({ length: columncount }).forEach(col => {
     column = document.createElement('div');
     column.classList.add('column');
     columns.push(column);

@@ -23,6 +23,7 @@
         cell.classList.add('gridcell');
 
         const img = document.createElement('img');
+        img.onload = () => onLoad(img);
         img.src = url;
         img.loading = 'lazy'; // native lazy loading
         img.alt = url; // optional
@@ -36,5 +37,9 @@
       container.innerHTML = "<p>Failed to load images.</p>";
     }
   }
+
+function onLoad(img) {
+console.log(img.naturalwidth);
+}
 
   fetchImages();

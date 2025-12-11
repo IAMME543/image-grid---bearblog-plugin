@@ -6,15 +6,15 @@
   const columncount = 3; // or replace with how many columns you want
   const columns = [];
 
-  const container = document.getElementById('imageGrid');
+  const container = document.getElementById('imageMasonry');
 
   
 
   columncount.forEach(col = () -> {
     column = document.createElement('div');
     column.classList.add('column');
-
     columns.push(column);
+    container.appendchild(column);
   });
 
   async function fetchImages() {
@@ -31,6 +31,7 @@
         .filter(file => file.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
         .map(file => file.download_url);
 
+      // split url array into columns
       const columnlength = Math.ceil(urls.length / columncount);
       for (let i = 0; i < columncount; i++) {
         const start = i * columnlength;

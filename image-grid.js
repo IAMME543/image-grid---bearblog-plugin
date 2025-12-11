@@ -23,12 +23,11 @@
         cell.classList.add('gridcell');
 
         const img = document.createElement('img');
-        img.onload = () => onLoad(img);
         img.src = url;
         img.loading = 'lazy'; // native lazy loading
         img.alt = url; // optional
         // fade-in effect when image loads
-        img.addEventListener('load', () => img.classList.add('loaded'));
+        img.addEventListener('load', () => onLoad(img));
         cell.appendChild(img);
         container.appendChild(cell);
       });
@@ -39,7 +38,8 @@
   }
 
 function onLoad(img) {
-console.log(img.naturalwidth);
+  img.classList.add('loaded);
+console.log(img.naturalWidth);
 }
 
   fetchImages();

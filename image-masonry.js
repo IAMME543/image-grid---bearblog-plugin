@@ -6,7 +6,7 @@
   const columncount = 3; // or replace with how many columns you want
   const columns = [];
 
-  const main = document.querySelect('main');
+  const main = document.querySelector('main');
 
   const container = document.createElement('div');
   container.classList.add('masonry');

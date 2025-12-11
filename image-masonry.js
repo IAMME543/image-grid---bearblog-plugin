@@ -7,7 +7,6 @@
   const columns = [];
 
   const container = document.createElement('div');
-  container.idList.add('imageMasonry');
   container.classList.add('masonry');
 
   
